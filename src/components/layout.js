@@ -8,9 +8,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import MobxProvider from '../stores/provider'
+import 'mobx-react-lite/batchingForReactDom'
 import Header from "./header"
+import { Link } from "gatsby"
 import "./layout.css"
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,23 +27,41 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <MobxProvider>
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+          display: 'flex',
+          flexDirection: 'column',
+          width: '100%',
+          minHeight: '100vh'
+        }}>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div
+          style={{
+            flex: '1 0 auto',
+            margin: `0 auto`,
+            maxWidth: '960px',
+            padding: `0 1.0875rem 1.45rem`,
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          <main>{children}</main>
+          <footer style={{ marginTop: 'auto' }}>
+            <Link to="/page-2/">Credits</Link>
+            © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+            <a href="https://github.com/iHateYourGlasses">me</a>
+            {` `}
+          using
+          {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </footer>
+        </div>
       </div>
-    </>
+    </MobxProvider>
   )
 }
 

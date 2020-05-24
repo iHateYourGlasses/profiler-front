@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Анкета Анона`,
+    description: `Создай свою анкету и запости ее где хочешь -  пусть все увидят твою снежинковость!`,
+    author: `@sprintbutcher`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +25,25 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prettier`,
+            options: {
+              // Look for local .prettierrc file.
+              // The same as `prettier.resolveConfig(process.cwd())`
+              usePrettierrc: true,
+              // Overwrite prettier options, check out https://prettier.io/docs/en/options.html
+              prettierOptions: {}
+            },
+          },
+          // any highlight plugin should be after
+          `gatsby-remark-prismjs`,
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

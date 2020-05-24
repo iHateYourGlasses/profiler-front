@@ -1,0 +1,32 @@
+.root {
+  width: 120px;
+  height: 36px;
+  border: 2px solid #ce9871;
+  position: relative;
+  margin: 10px 10px 10px 0;
+  cursor: pointer;
+}
+
+.root.active {
+  background: #ff2d2d;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  background: #ff6301;
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  top: -12px;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  filter: invert(1);
+  margin: 0;
+}

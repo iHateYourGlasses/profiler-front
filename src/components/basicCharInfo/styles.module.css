@@ -1,0 +1,26 @@
+.switches {
+  display: flex;
+}
+
+.title {
+  margin: 0 0 -10px 5px;
+  font-size: 14px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+}
+
+.divider {
+  width: 10px;
+}
+
+.inputWrapper {
+  width: 130px;
+  flex: 0 0 130px;
+}
+
+.input {
+  width: 130px;
+}

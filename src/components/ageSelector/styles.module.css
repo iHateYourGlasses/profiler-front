@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.label {
+  padding-right: 10px;;
+}
+
+.age {
+  width: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.circle {
+  height: 16px;
+  border: 2px solid #cd773d;
+  border-radius: 30%;;
+}
+
+.circle.hoverActive {
+  background: #ffe2ce;  
+}
+.circle.active {
+  background: #cd773d;
+}
