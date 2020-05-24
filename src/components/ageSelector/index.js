@@ -4,10 +4,6 @@ import useStore from '../../stores/useStore'
 import { observer } from "mobx-react-lite"
 import cn from 'classnames'
 
-const SEX = {
-  MALE: 'male',
-  FEMALE: 'female'
-}
 const ages = []
 for (let i = 10; i < 46; i++) {
   ages.push(i);
